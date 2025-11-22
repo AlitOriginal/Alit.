@@ -279,10 +279,5 @@ def not_found(e):
     return send_from_directory('.', 'index.html')
 
 if __name__ == '__main__':
-    print("=" * 60)
-    print("🚀 AI Chat Server запущен")
-    print("=" * 60)
-    print("📍 URL: http://localhost:5000")
-    print("📊 API Health: http://localhost:5000/api/health")
-    print("=" * 60)
-    app.run(debug=True, host='localhost', port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
